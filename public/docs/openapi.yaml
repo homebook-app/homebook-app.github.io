@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Homebook API
+  version: 0.1.0
+  description: API f\u00fcr Homebook-Module
+servers:
+  - url: https://api.homebook.local
+paths:
+  /health:
+    get:
+      summary: Status der API
+      operationId: getHealth
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /v1/meal-plan/week:
+    get:
+      summary: Liefert den Speiseplan der Woche
+      operationId: getMealPlanWeek
+      responses:
+        '200':
+          description: Weekly plan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  week:
+                    type: string
+                    example: 2026-W07
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        day:
+                          type: string
+                        dish:
+                          type: string
