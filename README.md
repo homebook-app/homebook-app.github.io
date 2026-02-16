@@ -15,6 +15,7 @@ Vue 3 + TypeScript + Vite website for Homebook, including:
 - Swagger UI (`swagger-ui-dist`) for OpenAPI rendering
 - Marked for Markdown rendering
 - Vue Router (hash history, GitHub Pages friendly)
+- Vuetify 3 (UI foundation, responsive navigation with hamburger menu)
 
 ## Development
 
