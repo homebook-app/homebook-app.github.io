@@ -7,6 +7,16 @@ import type { DocEntry } from '../data/types';
 const markdownHtml = ref<string>('<p>Loading documentation ...</p>');
 const currentDoc = ref<DocEntry | undefined>(docsEntries[0]);
 const docsError = ref<string>('');
+const sampleCalls = [
+  {
+    label: 'Health Check',
+    code: 'curl -s https://api.homebook.local/health'
+  },
+  {
+    label: 'Weekly Meal Plan',
+    code: 'curl -H "Authorization: Bearer <token>" https://api.homebook.local/v1/meal-plan/week'
+  }
+];
 
 const groupedDocs = computed<Record<string, DocEntry[]>>(() => {
   return docsEntries.reduce<Record<string, DocEntry[]>>((acc, entry) => {
@@ -97,6 +107,20 @@ onMounted(async () => {
         <div v-else class="swagger-shell">
           <div id="swagger-root"></div>
         </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header class="section-head">
+      <h2>Sample Developer Quickstart</h2>
+      <p>Starter snippets to demonstrate how endpoint usage can be documented on this page.</p>
+    </header>
+
+    <div class="card-grid three">
+      <article v-for="call in sampleCalls" :key="call.label" class="card">
+        <h3>{{ call.label }}</h3>
+        <pre class="code-block"><code>{{ call.code }}</code></pre>
       </article>
     </div>
   </section>

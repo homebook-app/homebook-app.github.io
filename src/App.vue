@@ -31,7 +31,7 @@ const navItems = [
           :key="item.to"
           :to="item.to"
           class="nav-link"
-          :class="{ active: route.path === item.to }"
+          :class="{ active: route.path === item.to || route.path.startsWith(`${item.to}/`) }"
         >
           {{ item.label }}
         </RouterLink>
@@ -39,11 +39,7 @@ const navItems = [
     </header>
 
     <main class="page-wrap">
-      <RouterView v-slot="{ Component }">
-        <Transition name="page-fade" mode="out-in">
-          <component :is="Component" :key="route.path" />
-        </Transition>
-      </RouterView>
+      <RouterView />
     </main>
 
     <footer class="site-footer">

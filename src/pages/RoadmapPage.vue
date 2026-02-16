@@ -7,6 +7,24 @@ function statusLabel(status: RoadmapStatus): string {
   if (status === 'progress') return 'In Progress';
   return 'Planned';
 }
+
+const releaseNotes = [
+  {
+    version: 'v0.8 Preview',
+    focus: 'Finance stability and onboarding',
+    highlight: 'Added household templates and first-time setup wizard.'
+  },
+  {
+    version: 'v0.9 Beta',
+    focus: 'Meal planning + docs upgrades',
+    highlight: 'OpenAPI docs integrated and markdown structure expanded.'
+  },
+  {
+    version: 'v1.0 Target',
+    focus: 'Production readiness',
+    highlight: 'Backup workflows, role hardening, and module lifecycle checks.'
+  }
+];
 </script>
 
 <template>
@@ -28,6 +46,21 @@ function statusLabel(status: RoadmapStatus): string {
         </div>
         <h2>{{ item.title }}</h2>
         <p>{{ item.summary }}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header class="section-head">
+      <h2>Sample Release Track</h2>
+      <p>Illustrative milestones to communicate release progress to users and contributors.</p>
+    </header>
+
+    <div class="card-grid three">
+      <article v-for="note in releaseNotes" :key="note.version" class="card">
+        <h3>{{ note.version }}</h3>
+        <p><strong>Focus:</strong> {{ note.focus }}</p>
+        <p>{{ note.highlight }}</p>
       </article>
     </div>
   </section>
