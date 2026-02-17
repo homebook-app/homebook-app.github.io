@@ -33,7 +33,7 @@ watch(
       <div class="site-header">
         <div class="header-inner">
           <RouterLink to="/" class="brand" aria-label="Homebook homepage">
-            <span class="brand-badge">HB</span>
+            <img class="brand-logo" src="/assets/logos/logo.png" alt="Homebook logo" />
             <span>
               <strong>Homebook</strong>
               <small>Private household platform</small>
@@ -89,7 +89,10 @@ watch(
         <RouterView />
       </main>
       <footer class="site-footer">
-        <p>Homebook • Self-hosted software for families and households</p>
+        <p>
+          <img class="footer-logo" src="/assets/logos/logo.png" alt="Homebook logo" />
+          <span>Homebook • Self-hosted software for families and households</span>
+        </p>
       </footer>
     </div>
   </v-app>
