@@ -84,15 +84,13 @@ watch(
       </div>
     </header>
 
-    <v-main>
-      <div class="app-shell">
-        <main class="page-wrap">
-          <RouterView />
-        </main>
-        <footer class="site-footer">
-          <p>Homebook • Self-hosted software for families and households</p>
-        </footer>
-      </div>
-    </v-main>
+    <div class="app-shell app-content">
+      <main class="page-wrap">
+        <RouterView />
+      </main>
+      <footer class="site-footer">
+        <p>Homebook • Self-hosted software for families and households</p>
+      </footer>
+    </div>
   </v-app>
 </template>
