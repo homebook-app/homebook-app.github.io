@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { RouterView, useRoute } from 'vue-router';
-import { useDisplay } from 'vuetify';
+import { RouterLink, RouterView, useRoute } from 'vue-router';
 
 const route = useRoute();
-const { mdAndDown } = useDisplay();
-
 const drawer = ref(false);
 
 const navItems = [
@@ -29,22 +26,20 @@ watch(
 
 <template>
   <v-app class="hb-app">
-    <div class="app-shell">
-      <div class="bg-orb bg-orb-a"></div>
-      <div class="bg-orb bg-orb-b"></div>
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
 
-      <v-app-bar class="site-header" flat>
-        <template #prepend>
-          <router-link to="/" class="brand" aria-label="Homebook homepage">
+    <header class="site-header-fixed">
+      <div class="site-header">
+        <div class="header-inner">
+          <RouterLink to="/" class="brand" aria-label="Homebook homepage">
             <span class="brand-badge">HB</span>
             <span>
               <strong>Homebook</strong>
               <small>Private household platform</small>
             </span>
-          </router-link>
-        </template>
+          </RouterLink>
 
-        <template #append>
           <nav class="site-nav d-none d-md-flex">
             <v-btn
               v-for="item in navItems"
@@ -59,43 +54,45 @@ watch(
             </v-btn>
           </nav>
 
-          <v-app-bar-nav-icon
-            class="d-md-none"
-            aria-label="Open navigation"
+          <button
+            class="menu-toggle d-md-none"
+            type="button"
+            :class="{ open: drawer }"
+            :aria-expanded="drawer ? 'true' : 'false'"
+            aria-label="Toggle navigation"
             @click="drawer = !drawer"
-          />
-        </template>
-      </v-app-bar>
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
-      <v-navigation-drawer
-        v-model="drawer"
-        location="right"
-        temporary
-        class="mobile-drawer"
-        :width="280"
-        :scrim="mdAndDown"
-      >
-        <v-list nav density="comfortable">
-          <v-list-item
-            v-for="item in navItems"
-            :key="item.to"
-            :to="item.to"
-            :active="isActive(item.to)"
-            :title="item.label"
-            rounded="xl"
-          />
-        </v-list>
-      </v-navigation-drawer>
+        <Transition name="mobile-menu">
+          <nav v-if="drawer" class="mobile-menu d-md-none" aria-label="Mobile navigation">
+            <RouterLink
+              v-for="item in navItems"
+              :key="item.to"
+              :to="item.to"
+              class="mobile-menu-link"
+              :class="{ active: isActive(item.to) }"
+            >
+              {{ item.label }}
+            </RouterLink>
+          </nav>
+        </Transition>
+      </div>
+    </header>
 
-      <v-main>
+    <v-main>
+      <div class="app-shell">
         <main class="page-wrap">
           <RouterView />
         </main>
-      </v-main>
-
-      <footer class="site-footer">
-        <p>Homebook • Self-hosted software for families and households</p>
-      </footer>
-    </div>
+        <footer class="site-footer">
+          <p>Homebook • Self-hosted software for families and households</p>
+        </footer>
+      </div>
+    </v-main>
   </v-app>
 </template>

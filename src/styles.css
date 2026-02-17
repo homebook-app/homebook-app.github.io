@@ -20,10 +20,11 @@ body,
 #app {
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 15% 12%, rgba(56, 189, 154, 0.2), transparent 36%),
@@ -37,13 +38,25 @@ a {
 
 .hb-app.v-application {
   background: transparent;
+  overflow-x: hidden;
+}
+
+.hb-app .v-application__wrap {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hb-app .v-main {
+  overflow: visible;
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'DM Serif Display', serif;
-  letter-spacing: 0.01em;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.01em;
 }
 
 p,
@@ -52,15 +65,14 @@ button,
 a,
 small,
 span {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 .app-shell {
   position: relative;
   max-width: 1220px;
   margin: 0 auto;
-  padding: 16px;
-  overflow-x: clip;
+  padding: 94px 16px 16px;
 }
 
 .bg-orb {
@@ -86,29 +98,33 @@ span {
   background: #ffd39b;
 }
 
+.site-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 10px 12px 0;
+}
+
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(10px);
   box-shadow: 0 12px 28px rgba(10, 19, 39, 0.08);
-  padding: 14px 16px;
-  position: sticky;
-  top: 14px;
-  z-index: 20;
-  margin-bottom: 12px;
+  margin: 0;
+  position: relative;
+  padding: 4px;
 }
 
-.site-header.v-toolbar {
-  height: 72px;
-}
-
-.site-header .v-toolbar__content {
-  padding: 10px 12px;
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 16px;
 }
 
 .brand {
@@ -175,8 +191,80 @@ span {
   border-color: transparent;
 }
 
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d4deee;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #1c3648;
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transform-origin: center;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: grid;
+  gap: 6px;
+  margin: 8px 10px 10px;
+  padding: 10px;
+  border: 1px solid #d9e3f2;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.mobile-menu-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.mobile-menu-link.active {
+  color: #0f5f4a;
+  background: #e8f7f1;
+  border-color: #b8dfd0;
+}
+
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
 .page-wrap {
-  padding: 6px 0 4px;
+  padding: 4px 0 16px;
 }
 
 .panel {
@@ -545,7 +633,7 @@ h1 {
   text-align: center;
   color: var(--muted);
   font-size: 0.86rem;
-  padding: 4px 0 18px;
+  padding: 4px 0 calc(20px + env(safe-area-inset-bottom));
 }
 
 .code-block {
@@ -558,25 +646,9 @@ h1 {
   overflow-x: auto;
 }
 
-.mobile-drawer .v-list-item--active {
-  background: #edf4ff;
-  color: #103c73;
-}
-
-.page-fade-enter-active,
-.page-fade-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.page-fade-enter-from,
-.page-fade-leave-to {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
 @media (max-width: 920px) {
   .app-shell {
-    padding: 12px;
+    padding: 86px 12px 12px;
   }
 
   .split-panel,
@@ -592,20 +664,18 @@ h1 {
     padding: 18px;
   }
 
-  .site-header {
-    position: static;
-  }
-
   .site-nav {
     width: 100%;
   }
 }
 
 @media (max-width: 720px) {
-  .site-header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
+  .header-inner {
+    padding: 0 10px;
+  }
+
+  .site-header-fixed {
+    padding: 0;
   }
 
   .brand {

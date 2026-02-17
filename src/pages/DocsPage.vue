@@ -74,7 +74,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="panel docs-panel">
+  <section class="panel">
     <header class="section-head">
       <p class="eyebrow">Documentation</p>
       <h1>Single place for product and API docs</h1>
