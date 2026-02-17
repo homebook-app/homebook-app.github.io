@@ -33,8 +33,10 @@ export type DocEntryType = 'markdown' | 'openapi';
 
 export interface DocEntry {
   id: string;
+  slug: string;
   type: DocEntryType;
   group: string;
   label: string;
   path: string;
+  description?: string;
 }

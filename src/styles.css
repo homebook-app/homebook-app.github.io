@@ -562,6 +562,7 @@ h1 {
 }
 
 .docs-item {
+  display: block;
   width: 100%;
   margin-top: 4px;
   border-radius: 10px;
@@ -571,6 +572,10 @@ h1 {
   padding: 9px 10px;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.docs-link {
+  text-decoration: none;
 }
 
 .docs-item:hover {
@@ -591,6 +596,10 @@ h1 {
 .docs-error {
   margin-top: 10px;
   color: #7f2f2f;
+}
+
+.docs-inline-space {
+  margin-top: 16px;
 }
 
 .markdown h1,
