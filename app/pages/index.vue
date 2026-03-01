@@ -20,9 +20,7 @@ const topModules = featureModules.slice(0, 3)
             One platform for household and private daily tools
           </h1>
           <p class="mt-5 text-lg text-muted max-w-2xl">
-            Homebook is a platform built for home and personal use. It brings practical tools together in one place,
-            from finances and shared lists to meal planning, recipes and documentation. Expect a modular experience,
-            a clear roadmap and flexible self-hosted deployment paths as the platform grows.
+            HomeBook is a self-hosted web application for organizing household tasks and joint financial planning. Developed for families, it creates structure, transparency, and collaboration in everyday life. Easily deployable on your own server via Docker.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">

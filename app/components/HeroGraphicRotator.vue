@@ -104,10 +104,6 @@ onBeforeUnmount(() => {
         </div>
       </Transition>
     </div>
-
-    <p class="text-xs text-muted text-center">
-      Visual rotates every 5 seconds
-    </p>
   </div>
 </template>
 

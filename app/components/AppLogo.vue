@@ -12,7 +12,7 @@
       </p>
 
       <p class="logo-subtitle">
-        Logo Placeholder
+        Your Home Platform
       </p>
     </div>
   </div>

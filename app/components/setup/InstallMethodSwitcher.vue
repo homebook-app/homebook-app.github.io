@@ -26,16 +26,16 @@ const methods: MethodConfig[] = [
     id: 'umbrel',
     label: 'Umbrel',
     icon: 'i-lucide-server',
-    description: 'Install via Umbrel app workflow.',
+    description: 'Install in Umbrel via Umbrel App Store.',
     component: UmbrelInstall
   },
-  {
-    id: 'casa-os',
-    label: 'Casa OS',
-    icon: 'i-lucide-house-plus',
-    description: 'Deploy with CasaOS app manager.',
-    component: CasaOsInstall
-  }
+  // {
+  //   id: 'casa-os',
+  //   label: 'Casa OS',
+  //   icon: 'i-lucide-house-plus',
+  //   description: 'Install in ZimaOS via ZimaOS App Store.',
+  //   component: CasaOsInstall
+  // }
 ]
 
 const selectedMethod = ref<InstallMethod>('docker')

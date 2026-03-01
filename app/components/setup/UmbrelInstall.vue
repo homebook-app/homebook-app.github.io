@@ -1,6 +1,10 @@
 <template>
+
   <div class="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+
     <div class="space-y-4">
+
+      <!--
       <div class="setup-step">
         <div class="setup-step-index">
           1
@@ -56,9 +60,13 @@
           </p>
         </div>
       </div>
+      -->
+
     </div>
 
     <div class="space-y-4">
+
+      <!--
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
           Umbrel Notes
@@ -76,6 +84,16 @@
 # Open app URL
 # Confirm features/docs routes load correctly</code></pre>
       </UCard>
+      -->
+
+      <UCard variant="subtle">
+        <p class="text-xs font-semibold uppercase tracking-wide text-primary">
+          cooming soon
+        </p>
+      </UCard>
+
     </div>
+
   </div>
+
 </template>
