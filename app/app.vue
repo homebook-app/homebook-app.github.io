@@ -48,18 +48,6 @@ useSeoMeta({
           <AppLogo />
         </NuxtLink>
 
-        <div class="flex items-center gap-1">
-          <UColorModeButton />
-          <UButton
-            to="https://github.com"
-            target="_blank"
-            icon="i-simple-icons-github"
-            aria-label="GitHub"
-            color="neutral"
-            variant="ghost"
-          />
-        </div>
-
         <nav class="w-full md:w-auto order-3 md:order-none overflow-x-auto">
           <div class="flex items-center gap-1 min-w-max">
             <NuxtLink
@@ -75,6 +63,17 @@ useSeoMeta({
             </NuxtLink>
           </div>
         </nav>
+
+        <div class="flex items-center gap-1 md:ml-auto">
+          <UButton
+            to="https://github.com/homebook-app/homebook"
+            target="_blank"
+            icon="i-simple-icons-github"
+            aria-label="GitHub"
+            color="neutral"
+            variant="ghost"
+          />
+        </div>
       </UContainer>
     </header>
 
