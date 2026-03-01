@@ -11,6 +11,16 @@ export interface DocEntry {
 
 export const docsEntries: DocEntry[] = [
   {
+    slug: 'getting-started/setup',
+    title: 'Getting Started: Setup',
+    description: 'How to build new Homebook modules and integrate them in the app shell.',
+    source: {
+      type: 'local',
+      path: 'getting-started-setup.md'
+    }
+  },
+
+  {
     slug: 'module-development',
     title: 'Module Development',
     description: 'How to build new Homebook modules and integrate them in the app shell.',
