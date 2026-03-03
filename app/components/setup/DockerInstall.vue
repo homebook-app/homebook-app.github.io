@@ -91,7 +91,7 @@
         </div>
         <div>
           <p class="font-medium">
-            bind with nginx
+            (optional) bind with nginx on a custom domain
           </p>
           <p class="text-muted text-sm mt-1">
             have a look on the <a
