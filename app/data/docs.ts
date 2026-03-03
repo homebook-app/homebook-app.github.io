@@ -19,6 +19,15 @@ export const docsEntries: DocEntry[] = [
       path: 'getting-started-setup.md'
     }
   },
+  {
+    slug: 'getting-started/nginx',
+    title: 'Getting Started: NGINX Setup',
+    description: 'How to configure NGINX for Homebook.',
+    source: {
+      type: 'local',
+      path: 'getting-started-nginx.md'
+    }
+  },
 
   {
     slug: 'module-development',

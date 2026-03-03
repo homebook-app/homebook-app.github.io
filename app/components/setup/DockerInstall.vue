@@ -7,10 +7,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Pull image
+            run docker
           </p>
           <p class="text-muted text-sm mt-1">
-            Pull the latest Homebook image from your container registry.
+            Install and start the container using docker compose or docker run with a named volume mounted to /var/lib/homebook.
           </p>
         </div>
       </div>
@@ -21,10 +21,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Run container
+            map ports
           </p>
           <p class="text-muted text-sm mt-1">
-            Start Homebook with mapped port and persistent volume.
+            homebook listens on port <b>8080</b> internally, make sure to map it to a port on your host to access the app (e.g. <code>6500:8080</code>).
           </p>
         </div>
       </div>
@@ -35,10 +35,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Validate process
+            open homebook
           </p>
           <p class="text-muted text-sm mt-1">
-            Confirm that the container is up and healthy.
+            run http://localhost:6500 in your browser
           </p>
         </div>
       </div>
@@ -49,36 +49,59 @@
         </div>
         <div>
           <p class="font-medium">
-            Open Homebook
+            setup homebook
           </p>
           <p class="text-muted text-sm mt-1">
-            Open <code>http://localhost:3000</code> and finish initial configuration.
+            proceed with the homebook setup (<a class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent" href="/docs/getting-started/setup">follow the getting started setup</a>).
           </p>
         </div>
       </div>
+
+      <div class="setup-step">
+        <div class="setup-step-index">
+          5
+        </div>
+        <div>
+          <p class="font-medium">
+            bind with nginx
+          </p>
+          <p class="text-muted text-sm mt-1">
+            have a look on the <a class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent" href="/docs/getting-started/nginx">nginx setup</a>.
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <div class="space-y-4">
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
-          Docker Run
+          Docker Compose
         </p>
-        <pre class="setup-code mt-3"><code>docker pull ghcr.io/your-org/homebook:latest
+        <pre class="setup-code mt-3"><code>services:
+  homebook:
+    image: homebookapp/app:latest
+    container_name: homebook
+    restart: always
+    ports:
+      - "6500:8080"
+    volumes:
+      - homebook_data:/var/lib/homebook
 
-docker run -d \\
-  --name homebook \\
-  -p 3000:3000 \\
-  -v homebook_data:/app/data \\
-  ghcr.io/your-org/homebook:latest</code></pre>
+volumes:
+  homebook_data:</code></pre>
       </UCard>
 
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
-          Post Install Checks
+          Docker Run
         </p>
-        <pre class="setup-code mt-3"><code>docker ps
-docker logs homebook
-curl -I http://localhost:3000</code></pre>
+        <pre class="setup-code mt-3"><code>docker run -d \
+  --name homebook \
+  --restart always \
+  -p 6500:8080 \
+  -v homebook_data:/var/lib/homebook \
+  homebookapp/app:latest</code></pre>
       </UCard>
     </div>
   </div>
