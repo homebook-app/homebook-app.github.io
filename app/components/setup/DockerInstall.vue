@@ -1,6 +1,30 @@
 <template>
+
   <div class="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+
     <div class="space-y-4">
+
+      <div class="setup-step">
+        <div class="setup-step-index">
+
+        </div>
+        <div>
+          <p class="font-medium">
+            requirements
+          </p>
+          <ul>
+            <li>
+              <p class="text-muted text-sm mt-1">1. Docker</p>
+            </li>
+            <li>
+              <p class="text-muted text-sm mt-1">2. Database - <a
+              class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
+              href="/docs/getting-started/supported-database">getting started with databases in homebook</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="setup-step">
         <div class="setup-step-index">
           1
@@ -10,7 +34,8 @@
             run docker
           </p>
           <p class="text-muted text-sm mt-1">
-            Install and start the container using docker compose or docker run with a named volume mounted to /var/lib/homebook.
+            Install and start the container using docker compose or docker run with a named volume mounted to
+            /var/lib/homebook.
           </p>
         </div>
       </div>
@@ -24,7 +49,8 @@
             map ports
           </p>
           <p class="text-muted text-sm mt-1">
-            homebook listens on port <b>8080</b> internally, make sure to map it to a port on your host to access the app (e.g. <code>6500:8080</code>).
+            homebook listens on port <b>8080</b> internally, make sure to map it to a port on your host to access the
+            app (e.g. <code>6500:8080</code>).
           </p>
         </div>
       </div>
@@ -52,7 +78,9 @@
             setup homebook
           </p>
           <p class="text-muted text-sm mt-1">
-            proceed with the homebook setup (<a class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent" href="/docs/getting-started/setup">follow the getting started setup</a>).
+            proceed with the homebook setup (<a
+              class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
+              href="/docs/getting-started/setup">follow the getting started setup</a>).
           </p>
         </div>
       </div>
@@ -66,7 +94,9 @@
             bind with nginx
           </p>
           <p class="text-muted text-sm mt-1">
-            have a look on the <a class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent" href="/docs/getting-started/nginx">nginx setup</a>.
+            have a look on the <a
+              class="text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
+              href="/docs/getting-started/nginx">nginx setup</a>.
           </p>
         </div>
       </div>

@@ -20,6 +20,15 @@ export const docsEntries: DocEntry[] = [
     }
   },
   {
+    slug: 'getting-started/supported-database',
+    title: 'Getting Started: Supported Databases',
+    description: 'Supported databases for Homebook and how to set them up.',
+    source: {
+      type: 'local',
+      path: 'getting-started-supported-database.md'
+    }
+  },
+  {
     slug: 'getting-started/nginx',
     title: 'Getting Started: NGINX Setup',
     description: 'How to configure NGINX for Homebook.',
