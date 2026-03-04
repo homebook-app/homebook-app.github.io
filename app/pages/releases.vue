@@ -1,5 +1,42 @@
 <script setup lang="ts">
-import { releaseNotes } from '~/data/releases'
+/* eslint-disable vue/no-v-html */
+import { computed } from 'vue'
+import { marked } from 'marked'
+import { releaseManifestEntries } from '~/data/releases-manifest'
+import { loadReleaseMarkdown } from '~/utils/releases-loader'
+
+interface ReleaseWithContent {
+  version: string
+  date: string
+  title: string
+  renderedHtml: string
+}
+
+function extractTitleFromMarkdown(markdown: string, fallback: string): string {
+  const match = markdown.match(/^#\s+(.+)$/m)
+  return match?.[1]?.trim() || fallback
+}
+
+const { data, error } = await useAsyncData('releases-content', async (): Promise<ReleaseWithContent[]> => {
+  return Promise.all(
+    releaseManifestEntries.map(async (entry) => {
+      const markdown = await loadReleaseMarkdown(entry)
+
+      return {
+        version: entry.version,
+        date: entry.date,
+        title: extractTitleFromMarkdown(markdown, `Release ${entry.version}`),
+        renderedHtml: marked.parse(markdown, { async: false }) as string
+      }
+    })
+  )
+})
+
+if (error.value) {
+  throw error.value
+}
+
+const releases = computed(() => data.value ?? [])
 </script>
 
 <template>
@@ -9,21 +46,21 @@ import { releaseNotes } from '~/data/releases'
         Releases
       </h1>
       <p class="mt-3 text-muted max-w-3xl">
-        All versions are loaded from <code>app/data/releases.ts</code>. Add a new release by appending
-        one more item to the array.
+        All versions are loaded from <code>app/content/releases/releases.json</code>. The release content is
+        rendered from the matching markdown file.
       </p>
     </section>
 
     <section class="space-y-4">
       <UCard
-        v-for="release in releaseNotes"
+        v-for="release in releases"
         :key="release.version"
       >
         <template #header>
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 class="text-xl font-semibold">
-                {{ release.version }} - {{ release.title }}
+                {{ release.title }}
               </h2>
               <p class="text-sm text-muted mt-1">
                 {{ release.date }}
@@ -38,14 +75,10 @@ import { releaseNotes } from '~/data/releases'
           </div>
         </template>
 
-        <ul class="space-y-2 text-sm list-disc list-inside">
-          <li
-            v-for="highlight in release.highlights"
-            :key="highlight"
-          >
-            {{ highlight }}
-          </li>
-        </ul>
+        <article
+          class="markdown-body text-sm"
+          v-html="release.renderedHtml"
+        />
       </UCard>
     </section>
   </UContainer>
