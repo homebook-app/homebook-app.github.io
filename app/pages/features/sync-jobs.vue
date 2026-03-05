@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { frontFeatures } from '~/data/features'
+import { backFeatures } from '~/data/features'
 
-const moduleData = frontFeatures.find(item => item.slug === 'lists')
+const moduleData = backFeatures.find(item => item.slug === 'sync-jobs')
 
 if (!moduleData) {
   throw createError({

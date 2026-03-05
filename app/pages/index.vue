@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { featureModules } from '~/data/features'
+import { frontFeatures } from '~/data/features'
 import HeroGraphicRotator from '~/components/HeroGraphicRotator.vue'
 import InstallMethodSwitcher from '~/components/setup/InstallMethodSwitcher.vue'
 
-const topModules = featureModules.slice(0, 3)
+const topModules = frontFeatures.slice(0, 3)
 </script>
 
 <template>

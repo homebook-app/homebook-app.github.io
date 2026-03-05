@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { featureModules } from '~/data/features'
+import { backFeatures, frontFeatures } from '~/data/features'
 </script>
 
 <template>
@@ -15,20 +15,18 @@ import { featureModules } from '~/data/features'
     </section>
 
     <section class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <UCard
-        v-for="module in featureModules"
-        :key="module.slug"
-        class="h-full"
-      >
+      <UCard v-for="module in frontFeatures" :key="module.slug" class="h-full">
         <template #header>
           <div class="flex items-center justify-between gap-3">
             <h2 class="font-semibold text-lg">
               {{ module.title }}
             </h2>
-            <UIcon
-              :name="module.icon"
-              class="text-xl text-primary"
-            />
+            <div class="flex items-center gap-2">
+              <UBadge v-if="module.isComingSoon" color="warning" variant="subtle" size="sm">
+                Coming soon
+              </UBadge>
+              <UIcon :name="module.icon" class="text-xl text-primary" />
+            </div>
           </div>
         </template>
 
@@ -36,16 +34,40 @@ import { featureModules } from '~/data/features'
           {{ module.description }}
         </p>
 
-        <template #footer>
-          <UButton
-            :to="`/features/${module.slug}`"
-            variant="ghost"
-            trailing-icon="i-lucide-arrow-right"
-          >
-            Open Placeholder
+        <template v-if="!module.isComingSoon" #footer>
+          <UButton :to="`/features/${module.slug}`" variant="ghost" trailing-icon="i-lucide-arrow-right">
+            Show more
           </UButton>
         </template>
       </UCard>
     </section>
+
+    <div class="space-y-4">
+      <UCard v-for="module in backFeatures" :key="module.slug" class="w-full">
+        <template #header>
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="font-semibold text-lg">
+              {{ module.title }}
+            </h3>
+            <div class="flex items-center gap-2">
+              <UBadge v-if="module.isComingSoon" color="warning" variant="subtle" size="sm">
+                Coming soon
+              </UBadge>
+              <UIcon :name="module.icon" class="text-xl text-primary" />
+            </div>
+          </div>
+        </template>
+
+        <p class="text-sm text-muted">
+          {{ module.description }}
+        </p>
+
+        <template v-if="!module.isComingSoon" #footer>
+          <UButton :to="`/features/${module.slug}`" variant="ghost" trailing-icon="i-lucide-arrow-right">
+            Show more
+          </UButton>
+        </template>
+      </UCard>
+    </div>
   </UContainer>
 </template>

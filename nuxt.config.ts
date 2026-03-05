@@ -1,8 +1,12 @@
 import { docsEntries } from './app/data/docs'
-import { featureModules } from './app/data/features'
+import { backFeatures, frontFeatures } from './app/data/features'
 
 const docsRoutes = docsEntries.map(entry => `/docs/${entry.slug}`)
-const featureRoutes = ['/features', ...featureModules.map(module => `/features/${module.slug}`)]
+const featureRoutes = [
+  '/features',
+  ...frontFeatures.map(module => `/features/${module.slug}`),
+  ...backFeatures.map(module => `/features/${module.slug}`)
+]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

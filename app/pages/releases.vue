@@ -25,6 +25,7 @@ const { data, error } = await useAsyncData('releases-content', async (): Promise
       return {
         version: entry.version,
         date: entry.date,
+        title: extractTitleFromMarkdown(markdown, `Release ${entry.version}`),
         renderedHtml: marked.parse(markdown, { async: false }) as string
       }
     })

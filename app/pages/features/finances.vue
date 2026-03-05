@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { featureModules } from '~/data/features'
+import { frontFeatures } from '~/data/features'
 
-const moduleData = featureModules.find(item => item.slug === 'finances')
+const moduleData = frontFeatures.find(item => item.slug === 'finances')
 
 if (!moduleData) {
   throw createError({

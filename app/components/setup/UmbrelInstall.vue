@@ -88,7 +88,7 @@
 
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
-          cooming soon
+          Coming soon
         </p>
       </UCard>
 
