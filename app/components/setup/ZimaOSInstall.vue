@@ -11,10 +11,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Open CasaOS app manager
+            Open Umbrel App Store
           </p>
           <p class="text-muted text-sm mt-1">
-            Go to the App Store or custom app section in CasaOS.
+            Navigate to your Umbrel dashboard and open the app management area.
           </p>
         </div>
       </div>
@@ -25,10 +25,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Configure Homebook
+            Add Homebook app
           </p>
           <p class="text-muted text-sm mt-1">
-            Set image, ports and a persistent volume for app data.
+            Install Homebook from your app source and keep persistent storage enabled.
           </p>
         </div>
       </div>
@@ -39,10 +39,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Deploy container
+            Start service
           </p>
           <p class="text-muted text-sm mt-1">
-            Save and start the container from the CasaOS UI.
+            Launch the app and wait until the status changes to healthy.
           </p>
         </div>
       </div>
@@ -53,10 +53,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Verify service
+            Verify in browser
           </p>
           <p class="text-muted text-sm mt-1">
-            Check logs and open the Homebook URL to confirm onboarding works.
+            Open your Homebook URL from Umbrel and finish the first-time setup.
           </p>
         </div>
       </div>
@@ -65,29 +65,25 @@
     </div>
 
     <div class="space-y-4">
+
       <!--
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
-          CasaOS Compose Example
+          Umbrel Notes
         </p>
-        <pre class="setup-code mt-3"><code>services:
-  homebook:
-    image: ghcr.io/your-org/homebook:latest
-    ports:
-      - "3000:3000"
-    volumes:
-      - homebook_data:/app/data</code></pre>
+        <pre class="setup-code mt-3"><code># Umbrel dashboard
+# Apps -> Homebook -> Install
+# Enable persistence and restart policy</code></pre>
       </UCard>
 
       <UCard variant="subtle">
         <p class="text-xs font-semibold uppercase tracking-wide text-primary">
           Post Install Checks
         </p>
-        <pre class="setup-code mt-3"><code># Check running status in CasaOS
-# Inspect logs for startup errors
-# Open Homebook and validate core pages</code></pre>
+        <pre class="setup-code mt-3"><code># Validate app health in Umbrel
+# Open app URL
+# Confirm features/docs routes load correctly</code></pre>
       </UCard>
-
       -->
 
       <UCard variant="subtle">

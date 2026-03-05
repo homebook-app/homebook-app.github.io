@@ -3,8 +3,9 @@ import { computed, ref } from 'vue'
 import CasaOsInstall from '~/components/setup/CasaOsInstall.vue'
 import DockerInstall from '~/components/setup/DockerInstall.vue'
 import UmbrelInstall from '~/components/setup/UmbrelInstall.vue'
+import ZimaOSInstall from './ZimaOSInstall.vue'
 
-type InstallMethod = 'umbrel' | 'casa-os' | 'docker'
+type InstallMethod = 'umbrel' | 'docker' | 'zimaos'
 
 interface MethodConfig {
   id: InstallMethod
@@ -28,6 +29,13 @@ const methods: MethodConfig[] = [
     icon: 'i-lucide-server',
     description: 'Install in Umbrel via Umbrel App Store.',
     component: UmbrelInstall
+  },
+  {
+    id: 'zimaos',
+    label: 'ZimaOS',
+    icon: 'i-lucide-server',
+    description: 'Install in ZimaOS via ZimaOS App Store.',
+    component: ZimaOSInstall
   },
   // {
   //   id: 'casa-os',
