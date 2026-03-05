@@ -35,6 +35,7 @@ const { data, error } = await useAsyncData('roadmap-latest-releases', async (): 
       return {
         version: entry.version,
         date: entry.date,
+        title: extractTitleFromMarkdown(markdown, `Release ${entry.version}`),
         highlights: extractHighlightsFromMarkdown(markdown)
       }
     })
@@ -130,11 +131,20 @@ const latestReleases = computed(() => {
             </div>
           </template>
 
+          <p class="text-sm font-medium">
+            {{ release.title }}
+          </p>
+
           <ul class="space-y-2 text-sm text-muted list-disc list-inside">
             <li v-for="note in release.highlights.slice(0, 2)" :key="note">
               {{ note }}
             </li>
           </ul>
+
+          <UButton class="mt-4" :to="`/releases#${release.version}`" color="neutral" variant="outline" size="sm"
+            trailing-icon="i-lucide-arrow-right">
+            Show Release
+          </UButton>
         </UCard>
       </div>
     </section>

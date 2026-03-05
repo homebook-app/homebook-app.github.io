@@ -16,9 +16,9 @@ const slug = computed(() => {
 })
 const docEntry = computed(() => resolveDoc(slug.value))
 const breadcrumbItems = computed(() => [
-  { label: 'Startseite', to: '/' },
+  { label: 'Home', to: '/' },
   { label: 'Docs', to: '/docs' },
-  { label: docEntry.value?.title ?? 'Aktuelle Seite', to: route.path }
+  { label: docEntry.value?.title ?? 'Current Page', to: route.path }
 ])
 
 if (!docEntry.value) {

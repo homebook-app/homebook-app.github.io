@@ -25,7 +25,6 @@ const { data, error } = await useAsyncData('releases-content', async (): Promise
       return {
         version: entry.version,
         date: entry.date,
-        title: extractTitleFromMarkdown(markdown, `Release ${entry.version}`),
         renderedHtml: marked.parse(markdown, { async: false }) as string
       }
     })
@@ -43,42 +42,29 @@ const releases = computed(() => data.value ?? [])
   <UContainer class="py-12 space-y-8">
     <section>
       <h1 class="text-3xl font-bold">
-        Releases
+        HomeBook Releases
       </h1>
-      <p class="mt-3 text-muted max-w-3xl">
-        All versions are loaded from <code>app/content/releases/releases.json</code>. The release content is
-        rendered from the matching markdown file.
-      </p>
     </section>
 
     <section class="space-y-4">
-      <UCard
-        v-for="release in releases"
-        :key="release.version"
-      >
+      <UCard v-for="release in releases" :key="release.version" :id="release.version">
         <template #header>
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 class="text-xl font-semibold">
-                {{ release.title }}
+                HomeBook v{{ release.version }}
               </h2>
               <p class="text-sm text-muted mt-1">
                 {{ release.date }}
               </p>
             </div>
-            <UBadge
-              color="primary"
-              variant="subtle"
-            >
+            <UBadge color="primary" variant="subtle">
               Release
             </UBadge>
           </div>
         </template>
 
-        <article
-          class="markdown-body text-sm"
-          v-html="release.renderedHtml"
-        />
+        <article class="markdown-body text-sm" v-html="release.renderedHtml" />
       </UCard>
     </section>
   </UContainer>
