@@ -30,9 +30,15 @@ import { backFeatures, frontFeatures } from '~/data/features'
           </div>
         </template>
 
-        <p class="text-sm text-muted">
-          {{ module.description }}
-        </p>
+        <div class="space-y-3">
+          <p class="text-sm font-medium text-toned">
+            {{ module.subtitle }}
+          </p>
+          <div class="border-t border-default" />
+          <p class="text-sm text-muted">
+            {{ module.description }}
+          </p>
+        </div>
 
         <template v-if="!module.isComingSoon" #footer>
           <UButton :to="`/features/${module.slug}`" variant="ghost" trailing-icon="i-lucide-arrow-right">
@@ -58,9 +64,15 @@ import { backFeatures, frontFeatures } from '~/data/features'
           </div>
         </template>
 
-        <p class="text-sm text-muted">
-          {{ module.description }}
-        </p>
+        <div class="space-y-3">
+          <p class="text-sm font-medium text-toned">
+            {{ module.subtitle }}
+          </p>
+          <div class="border-t border-default" />
+          <p class="text-sm text-muted">
+            {{ module.description }}
+          </p>
+        </div>
 
         <template v-if="!module.isComingSoon" #footer>
           <UButton :to="`/features/${module.slug}`" variant="ghost" trailing-icon="i-lucide-arrow-right">
