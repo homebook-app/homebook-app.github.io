@@ -25,10 +25,10 @@
         </div>
         <div>
           <p class="font-medium">
-            Add Homebook app
+            Add HomeBook app
           </p>
           <p class="text-muted text-sm mt-1">
-            Install Homebook from your app source and keep persistent storage enabled.
+            Install HomeBook from your app source and keep persistent storage enabled.
           </p>
         </div>
       </div>
@@ -56,7 +56,7 @@
             Verify in browser
           </p>
           <p class="text-muted text-sm mt-1">
-            Open your Homebook URL from Umbrel and finish the first-time setup.
+            Open your HomeBook URL from Umbrel and finish the first-time setup.
           </p>
         </div>
       </div>
@@ -72,7 +72,7 @@
           Umbrel Notes
         </p>
         <pre class="setup-code mt-3"><code># Umbrel dashboard
-# Apps -> Homebook -> Install
+# Apps -> HomeBook -> Install
 # Enable persistence and restart policy</code></pre>
       </UCard>
 

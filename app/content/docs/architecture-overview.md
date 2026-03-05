@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Homebook is organized around feature modules and shared infrastructure.
+HomeBook is organized around feature modules and shared infrastructure.
 
 ## Layers
 

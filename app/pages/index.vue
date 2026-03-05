@@ -14,7 +14,7 @@ const topModules = frontFeatures.slice(0, 3)
           <div class="hero-glow" aria-hidden="true" />
 
           <p class="text-sm font-semibold uppercase tracking-widest text-primary">
-            Homebook
+            HomeBook
           </p>
           <h1 class="mt-4 text-4xl md:text-5xl font-bold leading-tight">
             One platform for household and private daily tools

@@ -45,7 +45,7 @@ export const roadmapItems: RoadmapItem[] = [
   {
     id: 'recipe-marketplace',
     title: 'Recipe Marketplace',
-    description: 'Import, curate and share recipe packs across Homebook workspaces.',
+    description: 'Import, curate and share recipe packs across HomeBook workspaces.',
     target: 'Q4 2026',
     status: 'backlog',
     tags: ['Recipes', 'Community']

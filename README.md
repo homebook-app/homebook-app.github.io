@@ -1,4 +1,4 @@
-# Homebook Developer Setup
+# HomeBook Developer Setup
 
 ```bash
 # 1) Install dependencies

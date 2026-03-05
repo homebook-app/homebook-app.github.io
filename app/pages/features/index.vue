@@ -9,7 +9,7 @@ import { backFeatures, frontFeatures } from '~/data/features'
         Features
       </h1>
       <p class="mt-3 text-muted max-w-3xl">
-        Explore all planned Homebook modules. Every page is already scaffolded with a structured placeholder,
+        Explore all planned HomeBook modules. Every page is already scaffolded with a structured placeholder,
         so you can iteratively add UI, data models and integrations.
       </p>
     </section>

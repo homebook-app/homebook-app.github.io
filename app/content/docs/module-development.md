@@ -1,6 +1,6 @@
 # Module Development
 
-This page is a starter for writing internal Homebook module docs.
+This page is a starter for writing internal HomeBook module docs.
 
 ## Goals
 

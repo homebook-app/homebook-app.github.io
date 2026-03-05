@@ -13,7 +13,7 @@ export const docsEntries: DocEntry[] = [
   {
     slug: 'getting-started/setup',
     title: 'Getting Started: Setup',
-    description: 'How to build new Homebook modules and integrate them in the app shell.',
+    description: 'How to build new HomeBook modules and integrate them in the app shell.',
     source: {
       type: 'local',
       path: 'getting-started-setup.md'
@@ -22,7 +22,7 @@ export const docsEntries: DocEntry[] = [
   {
     slug: 'getting-started/supported-database',
     title: 'Getting Started: Supported Databases',
-    description: 'Supported databases for Homebook and how to set them up.',
+    description: 'Supported databases for HomeBook and how to set them up.',
     source: {
       type: 'local',
       path: 'getting-started-supported-database.md'
@@ -31,7 +31,7 @@ export const docsEntries: DocEntry[] = [
   {
     slug: 'getting-started/nginx',
     title: 'Getting Started: NGINX Setup',
-    description: 'How to configure NGINX for Homebook.',
+    description: 'How to configure NGINX for HomeBook.',
     source: {
       type: 'local',
       path: 'getting-started-nginx.md'
@@ -41,7 +41,7 @@ export const docsEntries: DocEntry[] = [
   {
     slug: 'module-development',
     title: 'Module Development',
-    description: 'How to build new Homebook modules and integrate them in the app shell.',
+    description: 'How to build new HomeBook modules and integrate them in the app shell.',
     source: {
       type: 'local',
       path: 'module-development.md'
