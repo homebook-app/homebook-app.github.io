@@ -17,6 +17,15 @@
   --color-green-950: #052e16;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Zain', sans-serif;
+}
+
 .timeline {
   position: relative;
   display: grid;
@@ -160,12 +169,17 @@
 }
 
 .logo-copy {
+  display: flex;
+  align-items: center;
+  height: 2rem;
   line-height: 1.05;
 }
 
 .logo-title {
-  font-size: 0.96rem;
-  font-weight: 650;
+  font-family: 'Zain', sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  transform: translateY(0.1em);
   color: rgb(15 23 42);
 }
 
