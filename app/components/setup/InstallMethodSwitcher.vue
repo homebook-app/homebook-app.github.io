@@ -31,21 +31,21 @@ const methods: MethodConfig[] = [
     id: 'umbrel',
     label: 'UmbrelOS',
     svg: umbrelIcon,
-    description: 'Install in Umbrel via Umbrel App Store.',
+    description: 'Install in UmbrelOS',
     component: UmbrelInstall
   },
   {
     id: 'zimaos',
     label: 'ZimaOS',
     svg: zimaOsIcon,
-    description: 'Install in ZimaOS via ZimaOS App Store.',
+    description: 'Install in ZimaOS',
     component: ZimaOSInstall
   },
   {
     id: 'unraid',
     label: 'Unraid',
     svg: unraidIcon,
-    description: 'Install in Unraid via Unraid App Store.',
+    description: 'Install in Unraid',
     component: UnraidInstall
   }
 ]
