@@ -56,13 +56,23 @@ const latestReleases = computed(() => {
 
 <template>
   <UContainer class="py-12 space-y-12">
-    <section>
-      <h1 class="text-3xl font-bold">
-        Roadmap
-      </h1>
-      <p class="mt-3 text-muted max-w-3xl">
-        This timeline is powered by an editable TypeScript array in <code>app/data/roadmap.ts</code>.
-      </p>
+    <section
+      class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-500/10 via-yellow-500/5 to-transparent border border-yellow-500/20 px-8 py-10">
+      <div class="relative z-10">
+        <span
+          class="inline-flex items-center gap-2 text-xs font-medium text-yellow-400 bg-yellow-500/10 rounded-full px-3 py-1 mb-4">
+          <UIcon name="i-lucide-map" class="size-3.5" />
+          Roadmap and Releases
+        </span>
+        <h1 class="text-3xl font-bold">
+          Roadmap
+        </h1>
+        <p class="mt-3 text-muted max-w-3xl text-lg">
+          All coming features, improvements and releases of HomeBook in a clear timeline. This roadmap is a living document and will be continuously updated as we progress with development.
+        </p>
+      </div>
+      <div class="absolute -right-8 -top-8 size-48 rounded-full bg-yellow-500/5 blur-3xl" />
+      <div class="absolute -left-12 -bottom-12 size-32 rounded-full bg-yellow-500/5 blur-2xl" />
     </section>
 
     <section class="space-y-6">

@@ -1,7 +1,9 @@
 import { docsEntries } from './app/data/docs'
+import { devEntries } from './app/data/dev'
 import { backFeatures, frontFeatures } from './app/data/features'
 
 const docsRoutes = docsEntries.map(entry => `/docs/${entry.slug}`)
+const devRoutes = devEntries.map(entry => `/dev/${entry.slug}`)
 const featureRoutes = [
   '/features',
   ...frontFeatures.map(module => `/features/${module.slug}`),
@@ -30,6 +32,7 @@ export default defineNuxtConfig({
     '/roadmap': { prerender: true },
     '/releases': { prerender: true },
     '/docs': { prerender: true },
+    '/dev': { prerender: true },
     '/features': { prerender: true }
   },
 
@@ -43,8 +46,10 @@ export default defineNuxtConfig({
         '/roadmap',
         '/releases',
         '/docs',
+        '/dev',
         ...featureRoutes,
-        ...docsRoutes
+        ...docsRoutes,
+        ...devRoutes
       ]
     }
   },

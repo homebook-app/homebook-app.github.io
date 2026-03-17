@@ -5,7 +5,8 @@ const navItems = [
   { label: 'Overview', to: '/' },
   { label: 'Features', to: '/features' },
   { label: 'Roadmap', to: '/roadmap' },
-  { label: 'Docs', to: '/docs' }
+  { label: 'Docs', to: '/docs' },
+  { label: 'Dev', to: '/dev' }
 ]
 
 useHead({
@@ -76,6 +77,9 @@ useSeoMeta({
           </NuxtLink>
           <NuxtLink to="/docs" class="hover:text-highlighted transition-colors">
             Docs
+          </NuxtLink>
+          <NuxtLink to="/dev" class="hover:text-highlighted transition-colors">
+            Dev
           </NuxtLink>
         </div>
       </UContainer>
