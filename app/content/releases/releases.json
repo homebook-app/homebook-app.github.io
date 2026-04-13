@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.0.178",
+    "date": "2026-04-13",
+    "markdownFile": "20260413-1.0.178.md",
+    "short_sha": "bd348d0",
+    "commit_url": "https://github.com/homebook-app/homebook/commit/bd348d0675f8adc065b0908021d66095da9dd801",
+    "run_id": "24343095736"
+  },
+  {
     "version": "1.0.177",
     "date": "2026-04-13",
     "markdownFile": "20260413-1.0.177.md",
